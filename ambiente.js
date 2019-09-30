@@ -10,15 +10,15 @@ console.log("Olá tudo bem!")
 console.log("Olá tudo bem!")
 */
 /*
-
-TESTA PRIMEIRO E DEPOIS EXECUTA O BLOCO
+*/
+//TESTA PRIMEIRO E DEPOIS EXECUTA O BLOCO
 
 contador = 1
 while(contador < 7){
     console.log("Olá tudo bem!")
     contador++
 }
-*/
+
 
 /*
 

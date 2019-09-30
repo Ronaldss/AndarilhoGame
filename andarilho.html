@@ -12,37 +12,37 @@
         }
     </style>
 </head>
-<body>
+<body onload="criarPlayer()">
     <!-- coluna da casa -->
     <p id="quarto"></p>
     <script>
-        // Lugar de nascimento do player
-        var casa = document.querySelector("p#quarto")
+        
+        
 
         // Criando o player
-        function criandoTom(){
-            let tom = document.createElement('img')
+        var contador = 0
+        function criarPlayer(){
+            // Lugar de nascimento do player
+            var casa = document.querySelector("p#quarto")
+
+            var tom = document.createElement('img')
             tom.setAttribute('src','player.png')
             tom.setAttribute('alt','Problema com a imagem')
             tom.style.borderRadius = "100%"
-
             // Chamando o player
             casa.appendChild(tom)
+            contador++
+            setTimeout("criarPlayer()",1000)
+            console.log(`Replica: ${contador}`)
         }
-            if(criandoTom()){multiplicar()}
-            // Tom a se multiplicar
-            function multiplicar(){
-                var individuo = 1
-                if (individuo <=100){
-                    criandoTom()
-                    setTimeout("multiplicar()",3000)
-                    console.log(`Criando ${individuo}.`)
-                    individuo++
-                }
-                console.log(`Foram criados ${individuo} individuos.`)
-                console.log(`Não consigo mais me multiplicar!`)
-            }
-        criandoTom()
+        
+        //Replicando player 1000 vezes
+       /* var i = 1000
+        while (i>0){
+            criarPlayer()
+            i--
+        }
+        */
     </script>
 </body>
 </html>
