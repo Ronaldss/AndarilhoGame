@@ -10,53 +10,74 @@
             background: #19181F;
             color: white;
         }
+        #outraIMG{
+            border-radius: 100%;
+            
+        }
+        #quarto {
+        /* -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1); */
+        transform: perspective(17px);
+        
+}
     </style>
-</head>
-<body onload="criarPlayer()">
-    <!-- coluna da casa -->
-    <p id="outraIMG"></p>
-    <p id="quarto">
-        <img src="2.png" alt="error">
-    </p>
     <script>
-        
-        //var IMGfixa = window.document.querySelector("p#outraIMG")
-        //var foto = document.createElement('img')
-        //foto.setAttribute('src','2.png')
-        //IMGfixa.appendChild(foto)
-
-        function click(){
-            document.getElementById('outraIMG').style.display = 'none'
-            console.log('Deletando!')
-        }
-
-        // Criando o player
-        var contador = 0
-        function criarPlayer(){
-            // Lugar de nascimento do player
-            var casa = document.querySelector("p#quarto")
-
-            var tom = document.createElement('img')
-            tom.setAttribute('src','player.png')
-            tom.setAttribute('id',`${contador}`)
-            tom.style.borderRadius = "100%"
-            // Chamando o player
-            casa.appendChild(tom)
-            contador++
-            setTimeout("criarPlayer()",1000)
-            console.log(`Replica: ${contador}`)
-        }
-        
-        
-        
-        //Replicando player 1000 vezes
-       /* var i = 1000
-        while (i>0){
-            criarPlayer()
-            i--
-        }
-        */
-    </script>
-    <input type="button" value="deletando" onclick="click()">
+             function seila(){
+                // CRIANDO E TRABALHANDO A IMG NO HTML
+                //var teste = window.document.getElementById("outraIMGmanual")
+                //teste.style.display = 'none'
+                //console.log('Toma!')
+                var parentesco = window.document.getElementById('outraIMG')
+                if(parentesco.parentNode){
+                    parentesco.parentNode.removeChild(parentesco)
+                }
+            }
+    
+            // Criando o player
+            var contador = 0
+            function criarPlayer(){
+                // Lugar de nascimento do player
+                var casa = document.querySelector("p#quarto")
+    
+                var tom = document.createElement('img')
+                tom.setAttribute('src','player.png')
+                tom.setAttribute('id',`${contador}`)
+                tom.setAttribute('height','100px')
+                //tom.style.borderRadius = "100%"
+                
+                // Chamando o player
+                casa.appendChild(tom)
+                contador++
+                setTimeout("criarPlayer()",1000)
+                console.log(`Replica: ${contador}`)
+            }
+            function imgExtra(){
+                var IMGfixa = window.document.querySelector("p#outraIMG")
+                var foto = document.createElement('img')
+                foto.setAttribute('src','2.png')
+                IMGfixa.appendChild(foto)
+                console.log('A function está ok!')
+            }
+           
+            
+            //Replicando player 1000 vezes
+           /* var i = 1000
+            while (i>0){
+                criarPlayer()
+                i--
+            }
+            */
+        </script>
+</head>
+<body onload="criarPlayer(), imgExtra()">
+    <!-- coluna da casa -->
+    <p id="outraIMGmanual">
+        <!--<img src="2.png" alt="error" id="outraIMG">--> 
+    </p>
+    <p id="outraIMG"></p>
+    <p id="quarto"></p>
+    <input type="button" value="deletando" onclick="seila()">
 </body>
 </html>
