@@ -24,6 +24,14 @@
 }
     </style>
     <script>
+        var minhaJanela
+        function abrirJanela(){
+            minhaJanela = window.open("","Ronald", "width=200,height=100")
+            minhaJanela.document.write("<p>Primeiro teste de janela.</p>")
+        }
+        function fecharJanela(){
+            minhaJanela.close()
+        }
              function seila(){
                 // CRIANDO E TRABALHANDO A IMG NO HTML
                 //var teste = window.document.getElementById("outraIMGmanual")
@@ -71,6 +79,8 @@
                     parentesco.parentNode.removeChild(parentesco)
                 }
                 console.log('O Tom se foi!')
+                // Abrindo janela secundária
+                window.open("http://ronaldssgithub.000webhostapp.com","","width=550,height=420,menubar=no")
             }
             function imgExtra(){
                 var IMGfixa = window.document.querySelector("p#outraIMG")
@@ -91,6 +101,8 @@
                     console.log("Volume MÁXIMO!")
                 }
            }
+           // Abrindo e fechando janela
+
         </script>
 </head>
 <body onload="criarPlayer(), imgExtra()">
@@ -104,5 +116,7 @@
     <input type="button" value="deletando" onclick="seila()">
     <input type="button" value="Xau Tom" onclick="xau()">
     <input type="button" value="Mascote" onclick="mascote()">
+    <button onclick="abrirJanela()">Site do Ronald</button>
+    <button onclick="fecharJanela()">Fechar janela</button>
 </body>
 </html>
