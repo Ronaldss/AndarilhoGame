@@ -33,6 +33,7 @@
                 if(parentesco.parentNode){
                     parentesco.parentNode.removeChild(parentesco)
                 }
+                console.log('A imagem foi deletada!')
             }
     
             // Criando o player
@@ -46,12 +47,28 @@
                 tom.setAttribute('id',`${contador}`)
                 tom.setAttribute('height','100px')
                 //tom.style.borderRadius = "100%"
-                
+            
                 // Chamando o player
                 casa.appendChild(tom)
                 contador++
                 setTimeout("criarPlayer()",1000)
                 console.log(`Replica: ${contador}`)
+            }
+            // Criando mascote
+            function mascote(){
+                var casaMasc = document.querySelector("p#mascote")
+                var mascote = window.document.createElement('img')
+                mascote.setAttribute('src','mascote.png')
+                casaMasc.appendChild(mascote)
+            }
+
+            // Deletando tom
+            function xau(){
+                var parentesco = window.document.getElementById('quarto')
+                if(parentesco.parentNode){
+                    parentesco.parentNode.removeChild(parentesco)
+                }
+                console.log('O Tom se foi!')
             }
             function imgExtra(){
                 var IMGfixa = window.document.querySelector("p#outraIMG")
@@ -60,15 +77,18 @@
                 IMGfixa.appendChild(foto)
                 console.log('A function está ok!')
             }
-           
-            
-            //Replicando player 1000 vezes
-           /* var i = 1000
-            while (i>0){
-                criarPlayer()
-                i--
-            }
-            */
+
+            let casaMasc = document.querySelector("p#mascote")
+
+           // Testando com while
+           var volume = 0
+           while(volume <= 10){
+                console.log(`Volume nível: ${volume}`)
+                volume++
+                if (volume == 10){
+                    console.log("Volume MÁXIMO!")
+                }
+           }
         </script>
 </head>
 <body onload="criarPlayer(), imgExtra()">
@@ -78,6 +98,9 @@
     </p>
     <p id="outraIMG"></p>
     <p id="quarto"></p>
+    <p id="mascote"></p>
     <input type="button" value="deletando" onclick="seila()">
+    <input type="button" value="Xau Tom" onclick="xau()">
+    <input type="button" value="Mascote" onclick="mascote()">
 </body>
 </html>
