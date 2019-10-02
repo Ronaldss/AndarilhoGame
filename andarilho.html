@@ -58,8 +58,9 @@
             function mascote(){
                 var casaMasc = document.querySelector("p#mascote")
                 var mascote = window.document.createElement('img')
+                mascote.setAttribute('id','IdMasc')
                 mascote.setAttribute('src','mascote.png')
-                mascote.setAttribute('borderRadius','100%')
+                mascote.style.borderRadius = "100%"
                 casaMasc.appendChild(mascote)
             }
 
