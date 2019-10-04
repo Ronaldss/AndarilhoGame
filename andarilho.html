@@ -71,6 +71,13 @@
                 mascote.style.borderRadius = "100%"
                 casaMasc.appendChild(mascote)
             }
+            // Deletando mascote
+            function XauMascote(){
+                var obj = window.document.getElementById("mascote")
+                if (obj.parentNode){
+                    obj.parentNode.removeChild(obj)
+                }
+            }
 
             // Deletando tom
             function xau(){
@@ -116,6 +123,7 @@
     <input type="button" value="deletando" onclick="seila()">
     <input type="button" value="Xau Tom" onclick="xau()">
     <input type="button" value="Mascote" onclick="mascote()">
+    <input type="button" value="Delete mascote" onclick="xauMascote()">
     <button onclick="abrirJanela()">Site do Ronald</button>
     <button onclick="fecharJanela()">Fechar janela</button>
 </body>
