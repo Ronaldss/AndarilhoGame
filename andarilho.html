@@ -70,13 +70,15 @@
                 mascote.setAttribute('src','mascote.png')
                 mascote.style.borderRadius = "100%"
                 casaMasc.appendChild(mascote)
+                console.log(`Mascote foi criado! :-)`)
             }
             // Deletando mascote
-            function XauMascote(){
-                var obj = window.document.getElementById("mascote")
-                if (obj.parentNode){
-                    obj.parentNode.removeChild(obj)
+            function xauMascote(){
+                var filho = window.document.getElementById("IdMasc")
+                if (filho.parentNode){
+                    filho.parentNode.removeChild(filho)
                 }
+                console.log(`Mascote foi deletado! :-(`)
             }
 
             // Deletando tom
